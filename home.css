@@ -54,7 +54,7 @@ p.do_more{
 .contact_links a{
 	margin:5px;
 }
-.prog_heading{
+.heading{
 	font-size: 34px; font-family: PT Serif,serif;font-weight: 700;color: var(--black);
 }
 .button {
@@ -82,7 +82,7 @@ p.do_more{
 	    font-size: 20px; font-family: PT Serif,serif;font-weight: 700;color: var(--black);
 	    margin-left: 0px;
     }
-    .prog_heading{
+    .heading{
 	font-size: 20px; font-family: PT Serif,serif;font-weight: 700;color: var(--black);
     }
     .child20{
