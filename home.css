@@ -54,6 +54,24 @@ p.do_more{
 .contact_links a{
 	margin:5px;
 }
+.prog_heading{
+	font-size: 34px; font-family: PT Serif,serif;font-weight: 700;color: var(--black);
+}
+.button {
+    background-color:#2980B9;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.lecture_notes{
+	display: none;
+}
+.child20{
+	margin-top: 10px;
+}
 @media all and (max-width: 800px) {
 	.parent_child1{
 		display: flex;
@@ -64,5 +82,27 @@ p.do_more{
 	    font-size: 20px; font-family: PT Serif,serif;font-weight: 700;color: var(--black);
 	    margin-left: 0px;
     }
+    .prog_heading{
+	font-size: 20px; font-family: PT Serif,serif;font-weight: 700;color: var(--black);
+    }
+    .child20{
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px; height: 0; overflow: hidden;
+    }
+	.child20 iframe,
+	.child20 object,
+	.child20 embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+	}
+   .child20{
+		width: 100% !important;
+		margin-top: 2%;
+		margin-bottom: 1%;
+   }
 
 }
