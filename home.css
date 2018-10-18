@@ -1,5 +1,4 @@
   body{
-  	background-color: black;
   }
   .parent{
   max-width: 1600px;
@@ -25,4 +24,10 @@ img.my_photo{
   font-size: 30px;
   font-weight: bold;
   letter-spacing: -0.01em;
+}
+.aboutme_me{
+	margin-top: 5px;
+}
+.aboutme_me > p {
+	margin : 0;
 }
