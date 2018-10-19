@@ -72,6 +72,12 @@ p.do_more{
 .child20{
 	margin-top: 10px;
 }
+input{
+	border-radius: 3px;
+}
+textarea{
+	border-radius: 3px;
+}
 @media all and (max-width: 800px) {
 	.parent_child1{
 		display: flex;
