@@ -78,6 +78,10 @@ input{
 textarea{
 	border-radius: 3px;
 }
+.moviebox{
+	display: flex;
+	flex-direction: row;
+}
 @media all and (max-width: 800px) {
 	.parent_child1{
 		display: flex;
@@ -109,6 +113,10 @@ textarea{
 		width: 100% !important;
 		margin-top: 2%;
 		margin-bottom: 1%;
+   }
+   .moviebox{
+   	display: flex;
+   	flex-direction: column;
    }
 
 }
