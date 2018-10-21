@@ -20,9 +20,8 @@
 		    </div>
 		    <ul class="nav navbar-nav">
 		      <li><a href="index.html">Home</a></li>
-		      <li class="active"><a href="cs.html">Computer Science</a></li>
-		      <li><a href="phy.html">Physics</a></li>
-		      <li><a href="mth.html">Mathematics</a></li>
+		      <li class="active"><a href="cs.html">Science House</a></li>
+		      <li><a href="phy.html">Courses @ IITK</a></li>
 		      <li><a href="cricket.html">Sports</a></li>
 		      <li><a href="movies.html">Movies</a></li>
 		      <li><a href="ideas.html">Some Random Ideas & Thoughts</a></li>
@@ -34,11 +33,26 @@
 
 		<div class="parent">
 			<ul>
-				<li><a href="#prog">Getting Started with Competitive Programming</a></li>
-				<li>Natural Language Processing</li>
-				<li>Computer Graphics</li>
-				<li><a href="#webdeb">Web Development</a></li>
-				<li><a href="#object">What is Object Oriented Programming ?</a></li>
+				<li>Computer Science
+					<ul>
+						<li><a href="#prog">Getting Started with Competitive Programming</a></li>
+						<li><a href="#webdeb">Web Development</a></li>
+						<li><a href="#object">Object Oriented Programming.</a></li>
+				    </ul>
+			    </li>
+			    <li>Physics
+					<ul>
+						<li><a href="#electro">Electrodynamics</a></li>
+						<li><a href="#quantum">Quantum Mechanics</a></li>
+						<li><a href="#special">Special Relativity</a></li>
+						<li><a href="#general">General Relativity</a></li>
+				    </ul>
+			    </li>
+			    <li>Maths
+					<ul>
+						<li><a href="linear">Linear Algebra</a></li>
+				    </ul>
+			    </li>
 			</ul>
 			<div id="prog">
 				<p class="heading">Getting Started with Competitive Programming</p>
@@ -104,6 +118,30 @@
 				    <li><b>C++ Reference : </b><a href="https://en.cppreference.com/w/" target="_blank">Link</a> , <a href="http://www.cplusplus.com/" target="_blank">Link</a></li>
 				</ul>
 			</div>
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = "https://palash97.github.io/cs.html"  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = 00001; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://palash97-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
 <hr>
 			<div id="webdeb">
 				<p class="heading">Web Development</p>
@@ -132,13 +170,65 @@
 			</div>
 
 			<div id="object">
-				<p class="heading">What is Object Oriented Programming ?</p>
+				<p class="heading">Object Oriented Programming</p>
 				<ul>
-					<li>What this two videos, if you are coming across OOP for the first time!</li>
+					<li>OOP in Python
 					<div class="moviebox">
-							<div class="child20"><iframe src="https://www.youtube.com/embed/-DP1i2ZU9gk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
 							<div class="child20"><iframe src="https://www.youtube.com/embed/FlGjISF3l78" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
 					</div>
+				    </li>
+				    <li>OOP in C++
+					<div class="moviebox">
+							<div class="child20"><iframe src="https://www.youtube.com/embed/ZOKLjJF54Xc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+					</div>
+				    </li>
+				</ul>
+			</div>
+
+
+			<div id="electro">
+				<p class="heading">Electrodynamics :</p>
+				<ul>
+					<li>Introduction to Electrodynamics by David J. Griffiths (One of the best Physics Textbook) <a href="http://ed.quantum-bg.org/Introduction%20To%20Electrodynamics%20-Griffiths.pdf">Link</a></li>
+					<li>Video lectures covering the book : <a href="https://www.youtube.com/watch?v=6NOIqhxvZ74&list=PLDDEED00333C1C30E">Link</a></li>
+					<li>Solution to the problems of the book : <a href="http://www.fisica.net/ebooks/eletricidade/Griffiths%20-%20Introduction%20to%20Electrodynamics%20Solutions%20Manual%20-%20With%20U">Link</a></li>
+					<li>Classical Electrodynamics by John David Jackson : <a href="https://palash97.github.io/phy552.pdf">Link</a></li>
+					<li>Solution to problems in the book : <a href="http://www-personal.umich.edu/~pran/jackson/">Link</a></li>
+				</ul>
+			</div>
+
+
+			<div id="quantum">
+				<p class="heading">Quantum Mechanics :</p>
+				<ul>
+					<li>The two mental pictures which experiments lead us to from -- the one of particles, the other of waves -- are both incomplete and have the validity of anologies which are accurate only in limiting cases. The apperent duality arises in limitation of our language.</li>
+					<li>It should not be suprising that our language is incapable to describing processes occuring within the atoms,for,as has been remarked, it was invented to describe the experiences of daily life, and these consist only of processes involving exceedingly large number of atoms. Furthermore it is very difficult to modify our language, so that it will be able to describe these atomic processes, for words can only describe things of which we can form mental picture, and this ability is to a result of daily experience. Fortunately Mathematics is not subject to this limitation, and it has been possible to invent a mathematical scheme -- <b>THE QUANTUM THEORY</b> -- which seems entirely adequate for the treatment of atomic processes. For visualization however, we must content ourselves with two incomplete analogies -- the wave picture and the corpuscular picture.  -- <b>W.Heisenberg</b></li>
+					<li>Lecture on Quantum Mechanics by Prof.Allan Adams : <a href="https://www.youtube.com/watch?v=lZ3bPUKo5zc&list=PLUl4u3cNGP61-9PEhRognw5vryrSEVLPr">Link</a> (These are the best lectures,  I ever came across while studying any subject)</li>
+					<li>Introduction to Quantum Mechanics by Prof.Manoj Harbola<a href="https://www.youtube.com/watch?v=1KkdyGalRL0&list=PLq-Gm0yRYwThlWitIAZTpbzrd3ii-kkoI"> Link</a></li>
+					<li>One electron double slit experiment by Akira Tonomura :
+							<div class="child20"><iframe src="https://www.youtube.com/embed/jvO0P5-SMxk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+					</li>
+				</ul>
+			</div>
+
+            <div id="special">
+				<p class="heading">Special Relativity :</p>
+				<ul>
+					<li><a href="https://www.youtube.com/watch?v=toGH5BdgRZ4&list=PLD9DDFBDC338226CA">Video Lectures Stanford</a></li>
+				</ul>
+			</div>
+
+            <div id="general">
+				<p class="heading">General Relativity :</p>
+				<ul>
+					<li><a href="https://www.youtube.com/watch?v=JRZgW1YjCKk&list=PLXLSbKIMm0kh6XsMSCEMnM02kEoW_8x-f">Video Lectures Stanford</a></li>
+				</ul>
+			</div>
+            
+            <div id="linear">
+				<p class="heading">Linear Algebra :</p>
+				<ul>
+				<li>Video Lectures by Prof. Gilbert Strang : <a href="https://www.youtube.com/watch?v=ZK3O402wf1c&list=PL49CF3715CB9EF31D">Link</a></li>		
 				</ul>
 			</div>
 
