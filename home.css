@@ -1,17 +1,17 @@
-  body{
+  body.index{
     background-image: url("bg.jpg");
     background-size: 100%;
     background-position: bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-  body.index{
+  /*body.index{
     background-image: url("arya.jpg");
     background-size: 100%;
     background-position: bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
+}*/
   .parent{
   max-width: 1600px;
   margin-left: auto;
