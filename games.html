@@ -13,77 +13,126 @@
 		<title>Palash Agrawal</title>
 	</head>
 	<body>
-
-		<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=320500372076192&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="index.html">Palash Agrawal</a>
-		    </div>
-		    <ul class="nav navbar-nav">
-		      <li><a href="index.html">Home</a></li>
-		      <li><a href="cs.html">Science House</a></li>
-		      <li><a href="phy.html">Courses @ IITK</a></li>
-		      <li><a href="cricket.html">Sports</a></li>
-		      <li><a href="movies.html">Movies</a></li>
-		      <li><a href="ideas.html">Some Random Ideas & Thoughts</a></li>
-		      <li><a href="aboutme.html">About me</a></li>
-		      <li class="active"><a href="games.html">Games</a></li>
-		    </ul>
-		  </div>
-		</nav>
-            	
-            <canvas id="my_canvas" onclick="win()">
-            	<h1 style="color: white;">Games are Under Construction , till then keep watching Game of Thrones !!!</h1>
-            </canvas>
-        
-
-
-
-	
+        <canvas id="game1" style="border:1px solid #000000;"></canvas>
 	</body>
 	<script type="text/javascript">
-		var canvas = null;
-		var context =null;
-		var framerate = 3000/30;
-		var frame = 0;
-		var frame2 = 0;
-		var assests = ['tyrion.jpg','jon2.jpg','jamie.jpg','dragon.jpg'];
-		var frames = [];
-		setup = function(){
-			canvas = document.getElementById("my_canvas");
-			context = canvas.getContext('2d');
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
+		// var canvas = null;
+		// var context =null;
+		// var framerate = 3000/30;
+		// var frame = 0;
+		// var frame2 = 0;
+		// var assests = ['tyrion.jpg','jon2.jpg','jamie.jpg','dragon.jpg'];
+		// var frames = [];
+		// setup = function(){
+		// 	canvas = document.getElementById("my_canvas");
+		// 	context = canvas.getContext('2d');
+		// 	canvas.width = window.innerWidth;
+		// 	canvas.height = window.innerHeight;
 
-			for(var i=0;i<assests.length;i++){
-				frames.push(new Image());
-				frames[i].src = assests[i];
-				frames[i].onload = onImageload;
-			}
-			setInterval(animate,framerate);
-		};
-		var animate = function(){
-			context.clearRect(0,0,canvas.width,canvas.height);
-		    context.drawImage(frames[frame],0,0,window.innerWidth,window.innerHeight);
-			frame2 = (frame2+1)%frames.length;
-			frame = (frame+1)%frames.length;
-		}
-		onImageload = function(){
-			console.log("Palash");
-		};
-		win = function(){
+		// 	for(var i=0;i<assests.length;i++){
+		// 		frames.push(new Image());
+		// 		frames[i].src = assests[i];
+		// 		frames[i].onload = onImageload;
+		// 	}
+		// 	setInterval(animate,framerate);
+		// };
+		// var animate = function(){
+		// 	context.clearRect(0,0,canvas.width,canvas.height);
+		//     context.drawImage(frames[frame],0,0,window.innerWidth,window.innerHeight);
+		// 	frame2 = (frame2+1)%frames.length;
+		// 	frame = (frame+1)%frames.length;
+		// }
+		// onImageload = function(){
+		// 	console.log("Palash");
+		// };
+		// win = function(){
 			
-		};
+		// };
+		// setup();
+		var p1y =50;
+		var p2y = 50;
+		var pt = 10;
+		var ph = 20;
+        var c = null;
+        var cc= null;
+        
+        var vx = 1;
+        var vy = 1;
+        var radius = 5;
+        var score1=0;
+        var score2=0;
+		setup = function(){
+			c = document.getElementById('game1');
+			cc = c.getContext('2d');
+			c.width=window.innerWidth/2;
+			c.height = window.innerHeight/2;
+			setInterval(update,1000/30);
+			c.addEventListener('mousemove',function(e){
+				p1y = e.clientY - ph/2;
+			})
+		}
 		setup();
+		var bx = c.width;
+        var by = c.height;
+        function reset(){
+			bx = c.width/2;
+			by = c.height/2;
+			vx=1;
+			vy=1;
+			p2y = c.height/2 - ph;
+		}
+		function update(){
+			
+			if(by-radius <= 0 && vy < 0){
+				vy = -vy;
+			}
+			if(by+radius >= c.height && vy > 0){
+				vy = -vy;
+			}
+			if(bx+radius >= c.width-pt  && vx > 0){
+				if(by - radius <= p2y + ph&& by + radius >= p2y){
+					vx = -vx;
+					vx=vx-0.4;
+					vy=vy-0.4;
+				}
+				else{
+					score1++;
+					reset();
+				}
+			}
+			if(bx-radius <= pt && vx < 0){
+				if(by - radius <= p1y + ph&& by + radius >= p1y){
+					vx = -vx;
+					vx=vx+0.4;
+					vy = vy + 0.4;
+				}
+				else{
+					score2++;
+					cc.fillText("Missed",c.width/2,c.height/2);
+					reset();
+				}
+			}
+			bx = bx + vx;
+			by = by + vy;
+			if(p2y+ph/2 > by){
+				p2y = p2y - 1.5;
+			}
+			if(p2y+ph/2 < by){
+				p2y = p2y + 1.5;
+			}
+			cc.fillStyle = "#E74C3C";
+			cc.fillRect(0,0,c.width,c.height);
+			cc.fillStyle = "#3498DB";
+			cc.fillRect(0,p1y,pt,ph);
+			cc.fillRect(c.width-pt,p2y,pt,ph);
+			cc.beginPath();
+			cc.arc(bx,by,radius,0,2*Math.PI);
+			cc.strokeStyle = "#3498DB";
+			cc.stroke();
+			cc.fill();
+			cc.fillText(score1,5,10);
+			cc.fillText(score2,c.width-10,10);
+		}
+		
 	</script>
 </html>
