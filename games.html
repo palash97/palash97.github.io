@@ -56,8 +56,8 @@
         var c = null;
         var cc= null;
         
-        var vx = 1;
-        var vy = 1;
+        var vx = 5;
+        var vy = 5;
         var radius = 5;
         var score1=0;
         var score2=0;
@@ -77,8 +77,8 @@
         function reset(){
 			bx = c.width/2;
 			by = c.height/2;
-			vx=1;
-			vy=1;
+			vx=5;
+			vy=5;
 			p2y = c.height/2 - ph;
 		}
 		function update(){
@@ -115,10 +115,10 @@
 			bx = bx + vx;
 			by = by + vy;
 			if(p2y+ph/2 > by){
-				p2y = p2y - 1.5;
+				p2y = p2y - 3;
 			}
 			if(p2y+ph/2 < by){
-				p2y = p2y + 1.5;
+				p2y = p2y + 3;
 			}
 			cc.fillStyle = "#E74C3C";
 			cc.fillRect(0,0,c.width,c.height);
