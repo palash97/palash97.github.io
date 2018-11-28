@@ -52,7 +52,7 @@
 		var p1y =50;
 		var p2y = 50;
 		var pt = 10;
-		var ph = 20;
+		var ph = 100;
         var c = null;
         var cc= null;
         
@@ -61,6 +61,7 @@
         var radius = 5;
         var score1=0;
         var score2=0;
+        var missed = 0;
 		setup = function(){
 			c = document.getElementById('game1');
 			cc = c.getContext('2d');
@@ -79,6 +80,7 @@
 			by = c.height/2;
 			vx=5;
 			vy=5;
+			ph=100;
 			p2y = c.height/2 - ph;
 		}
 		function update(){
@@ -92,7 +94,7 @@
 			if(bx+radius >= c.width-pt  && vx > 0){
 				if(by - radius <= p2y + ph&& by + radius >= p2y){
 					vx = -vx;
-					vx=vx-0.4;
+					vx=vx-1;
 					vy=vy-0.4;
 				}
 				else{
@@ -103,22 +105,27 @@
 			if(bx-radius <= pt && vx < 0){
 				if(by - radius <= p1y + ph&& by + radius >= p1y){
 					vx = -vx;
-					vx=vx+0.4;
+					vx=vx+1;
 					vy = vy + 0.4;
 				}
 				else{
 					score2++;
-					cc.fillText("Missed",c.width/2,c.height/2);
+					missed = 50;
 					reset();
 				}
 			}
 			bx = bx + vx;
 			by = by + vy;
+			if(vx<0){
+				if(ph>=20){
+					    ph=ph-1;
+				}
+			}
 			if(p2y+ph/2 > by){
-				p2y = p2y - 5;
+				p2y = p2y - 1;
 			}
 			if(p2y+ph/2 < by){
-				p2y = p2y + 5;
+				p2y = p2y + 1;
 			}
 			cc.fillStyle = "#E74C3C";
 			cc.fillRect(0,0,c.width,c.height);
@@ -132,6 +139,11 @@
 			cc.fill();
 			cc.fillText(score1,20,20);
 			cc.fillText(score2,c.width-20,20);
+			if(missed > 0){
+				cc.fillStyle = "white";
+			    cc.fillText("Missed",c.width/2-pt,c.height/2);
+			    missed--;
+			}
 		}
 		
 	</script>
