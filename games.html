@@ -116,16 +116,16 @@
 			}
 			bx = bx + vx;
 			by = by + vy;
-			if(vx<0){
+			if(bx-radius==pt){
 				if(ph>=20){
 					    ph=ph-1;
 				}
 			}
 			if(p2y+ph/2 > by){
-				p2y = p2y - 1;
+				p2y = p2y - 5;
 			}
 			if(p2y+ph/2 < by){
-				p2y = p2y + 1;
+				p2y = p2y + 5;
 			}
 			cc.fillStyle = "#E74C3C";
 			cc.fillRect(0,0,c.width,c.height);
