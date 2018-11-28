@@ -73,8 +73,8 @@
 			})
 		}
 		setup();
-		var bx = c.width;
-        var by = c.height;
+		var bx = c.width/2;
+        var by = c.height/2;
         function reset(){
 			bx = c.width/2;
 			by = c.height/2;
@@ -134,10 +134,10 @@
 			by = by + vy;
 			
 			if(p2y+ph/2 > by){
-				p2y = p2y - 5;
+				p2y = p2y - 7;
 			}
 			if(p2y+ph/2 < by){
-				p2y = p2y + 5;
+				p2y = p2y + 7;
 			}
 			cc.fillStyle = "#E74C3C";
 			cc.fillRect(0,0,c.width,c.height);
