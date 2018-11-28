@@ -99,10 +99,16 @@
 				if(by - radius <= p2y + ph&& by + radius >= p2y){
 					vx = -vx;
 					vx=vx-1;
-					vy=vy-1;
+					if(vy<0){
+						vy--;
+					}
+					if(vy>=0){
+						vy++;
+					}
 				}
 				else{
 					score1++;
+					missed = -50;
 					reset();
 				}
 			}
@@ -110,7 +116,12 @@
 				if(by - radius <= p1y + ph&& by + radius >= p1y){
 					vx = -vx;
 					vx=vx+1;
-					vy = vy +1;
+					if(vy<0){
+						vy--;
+					}
+					if(vy>=0){
+						vy++;
+					}
 				}
 				else{
 					score2++;
@@ -143,8 +154,13 @@
 			cc.fillText(score2,c.width-20,20);
 			if(missed > 0){
 				cc.fillStyle = "white";
-			    cc.fillText("Missed",c.width/2-pt,c.height/2);
+			    cc.fillText("You Missed!",c.width/2-pt,c.height/2);
 			    missed--;
+			}
+			if(missed < 0){
+				cc.fillStyle = "white";
+			    cc.fillText("CPU Missed!",c.width/2-pt,c.height/2);
+			    missed++;
 			}
 		}
 		
