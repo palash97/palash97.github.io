@@ -84,7 +84,11 @@
 			p2y = c.height/2 - ph;
 		}
 		function update(){
-			
+			if(bx-radius==pt){
+				if(ph>=20){
+					    ph=ph-1;
+				}
+			}
 			if(by-radius <= 0 && vy < 0){
 				vy = -vy;
 			}
@@ -95,7 +99,7 @@
 				if(by - radius <= p2y + ph&& by + radius >= p2y){
 					vx = -vx;
 					vx=vx-1;
-					vy=vy-0.4;
+					vy=vy-1;
 				}
 				else{
 					score1++;
@@ -106,7 +110,7 @@
 				if(by - radius <= p1y + ph&& by + radius >= p1y){
 					vx = -vx;
 					vx=vx+1;
-					vy = vy + 0.4;
+					vy = vy +1;
 				}
 				else{
 					score2++;
@@ -114,13 +118,10 @@
 					reset();
 				}
 			}
+
 			bx = bx + vx;
 			by = by + vy;
-			if(bx-radius==pt){
-				if(ph>=20){
-					    ph=ph-1;
-				}
-			}
+			
 			if(p2y+ph/2 > by){
 				p2y = p2y - 5;
 			}
