@@ -86,7 +86,7 @@
 		function update(){
 			if(bx-radius<=pt){
 				if(ph>=20){
-					    ph=ph-1;
+					    ph=ph-4;
 				}
 			}
 			if(by-radius <= 0 && vy < 0){
@@ -138,6 +138,7 @@
 			cc.strokeStyle = "#3498DB";
 			cc.stroke();
 			cc.fill();
+			cc.font = "20px";
 			cc.fillText(score1,20,20);
 			cc.fillText(score2,c.width-20,20);
 			if(missed > 0){
