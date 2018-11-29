@@ -56,12 +56,14 @@
         var c = null;
         var cc= null;
         
-        var vx = 5;
-        var vy = 5;
+        var vx = 3 + Math.random()*5;
+        var vy = 3 + Math.random()*5;
         var radius = 5;
         var score1=0;
         var score2=0;
         var missed = 0;
+        var vp2 = 7;
+        var ph2 = 100;
 		setup = function(){
 			c = document.getElementById('game1');
 			cc = c.getContext('2d');
@@ -78,9 +80,9 @@
         function reset(){
 			bx = c.width/2;
 			by = c.height/2;
-			vx=5;
-			vy=5;
-			ph=100;
+			vx=3 + Math.random()*5;
+			vy=3 + Math.random()*5;
+			//ph=100;
 			p2y = c.height/2 - ph;
 		}
 		function update(){
@@ -96,14 +98,14 @@
 				vy = -vy;
 			}
 			if(bx+radius >= c.width-pt  && vx > 0){
-				if(by - radius <= p2y + ph&& by + radius >= p2y){
+				if(by - radius <= p2y + ph2 && by + radius >= p2y){
 					vx = -vx;
 					vx=vx-1;
 					if(vy<0){
-						vy--;
+						vy-=0.2;
 					}
 					if(vy>=0){
-						vy++;
+						vy+=0.2;
 					}
 				}
 				else{
@@ -111,16 +113,17 @@
 					missed = -50;
 					reset();
 				}
+				vp2 = vp2 + 0.1
 			}
 			if(bx-radius <= pt && vx < 0){
 				if(by - radius <= p1y + ph&& by + radius >= p1y){
 					vx = -vx;
 					vx=vx+1;
 					if(vy<0){
-						vy--;
+						vy-=0.2;
 					}
 					if(vy>=0){
-						vy++;
+						vy+=0.2;
 					}
 				}
 				else{
@@ -134,32 +137,32 @@
 			by = by + vy;
 			
 			if(p2y+ph/2 > by){
-				p2y = p2y - 7;
+				p2y = p2y - vp2;
 			}
 			if(p2y+ph/2 < by){
-				p2y = p2y + 7;
+				p2y = p2y + vp2;
 			}
 			cc.fillStyle = "#E74C3C";
 			cc.fillRect(0,0,c.width,c.height);
 			cc.fillStyle = "#3498DB";
 			cc.fillRect(0,p1y,pt,ph);
-			cc.fillRect(c.width-pt,p2y,pt,ph);
+			cc.fillRect(c.width-pt,p2y,pt,ph2);
 			cc.beginPath();
 			cc.arc(bx,by,radius,0,2*Math.PI);
 			cc.strokeStyle = "#3498DB";
 			cc.stroke();
 			cc.fill();
-			cc.font = "20px";
-			cc.fillText(score1,20,20);
-			cc.fillText(score2,c.width-20,20);
+			cc.font = "30px Arial";
+			cc.fillText(score1,20,30);
+			cc.fillText(score2,c.width-30,30);
 			if(missed > 0){
 				cc.fillStyle = "white";
-			    cc.fillText("You Missed!",c.width/2-pt,c.height/2);
+			    cc.fillText("You Missed!",c.width/2-60,c.height/2);
 			    missed--;
 			}
 			if(missed < 0){
 				cc.fillStyle = "white";
-			    cc.fillText("CPU Missed!",c.width/2-pt,c.height/2);
+			    cc.fillText("CPU Missed!",c.width/2-pt-30,c.height/2);
 			    missed++;
 			}
 		}
