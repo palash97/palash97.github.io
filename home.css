@@ -5,6 +5,9 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.homeQuote{
+	
+}
   /*body.index{
     background-image: url("arya.jpg");
     background-size: 100%;
@@ -12,7 +15,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }*/
-  .parent{
+.parent{
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -20,6 +23,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.sports_points{
+	list-style-type: square;
+	font-family: 'Indie Flower', cursive;
+	font-size: 20px;
+	font-style: italic;
+	margin-top: 10px;
+}
+.sportsSidebarElements{
+	color: white;
+	cursor: pointer;
 }
 img.my_photo{
 	border-radius: 50%;
@@ -67,7 +81,10 @@ p.do_more{
 	margin:5px;
 }
 .heading{
-	font-size: 34px; font-family: PT Serif,serif;font-weight: 700;color: var(--black);
+	font-size: 34px;
+	font-weight: 700;
+	font-family: 'Acme', sans-serif;
+	color: var(--black);
 }
 .button {
     background-color:#2980B9;
