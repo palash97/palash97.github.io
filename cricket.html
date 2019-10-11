@@ -47,15 +47,16 @@
 
 	    	<div style="width: 15%;background-color:#777; align-items: center;height:10000px">
 	    		<div style="display:flex;flex-direction: column;padding: 20px;position: fixed;">
-		    		<p class="sportsSidebarElements" onmouseover="mouseOverSideBar(this)" onmouseout="mouseOutSideBar(this)" onclick="hideyoutube(this)" id="youtubevideoslink">Youtube Videos on Cricket</p>
-		    		<p class="sportsSidebarElements" onmouseover="mouseOverSideBar(this)" onmouseout="mouseOutSideBar(this)">Link 2</p>
-		    		<p class="sportsSidebarElements" onmouseover="mouseOverSideBar(this)" onmouseout="mouseOutSideBar(this)">Link 3</p>
+		    		<p class="sportsSidebarElements" onmouseover="mouseOverSideBar(this)" onmouseout="mouseOutSideBar(this)" onclick="hideyoutube(this)" id="youtubevideos">Youtube Videos on Cricket</p>
+		    		<p class="sportsSidebarElements" onmouseover="mouseOverSideBar(this)" onmouseout="mouseOutSideBar(this)" onclick="hideyoutube(this)" id="link1">Link 2</p>
+		    		<p class="sportsSidebarElements" onmouseover="mouseOverSideBar(this)" onmouseout="mouseOutSideBar(this)" onclick="hideyoutube(this)" id="link2">Link 3</p>
 	    	    </div>
 	    	</div>
 
             <div>
-	            <div style="display: none">fasdfasfds</div>
-				<div style="display: none" class="parent" id="youtubevideos" style="">
+	            <div style="display: none" id="link1content">fasdfasfds</div>
+	            <div style="display: none" id="link2content">fasdfasfds</div>
+				<div style="display: none" class="parent" id="youtubevideoscontent" style="">
 					<!-- <ul></ul> -->
 		            <!-- <div class="fb-comments" data-href="https://palash97.github.io/" data-numposts="2"></div> -->
 					<ul id="">
@@ -161,21 +162,32 @@
 
 
 <script>
+var z = null;
 function mouseOverSideBar(x) {
   x.style.color = "black";
 }
 
 function mouseOutSideBar(x) {
-	var y = document.getElementById("youtubevideos");
-	if(y.style.display === "none"){
-  		x.style.color = "white";
+	var y = document.getElementById(x.id + "content");
+	if(y.style.display === "flex"){
+  		x.style.color = "black";
+	}
+	else{
+		x.style.color = "white";	
 	}
 	
 }
 
 function hideyoutube(x) {
-	document.getElementById("youtubevideos").style.display = "flex";
+	if(z != null){
+		document.getElementById(z + "content" ).style.display = "none";
+		document.getElementById(z).style.color = "white";
+	}
+
+	document.getElementById(x.id + "content" ).style.display = "flex";
 	x.style.color = "black";
+
+	z = x.id;
 }
 </script>
 
