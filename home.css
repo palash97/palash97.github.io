@@ -26,9 +26,8 @@
 }
 .sports_points{
 	list-style-type: square;
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Rubik', sans-serif;
 	font-size: 20px;
-	font-style: italic;
 	margin-top: 10px;
 }
 .sportsSidebarElements{
@@ -83,8 +82,9 @@ p.do_more{
 .heading{
 	font-size: 34px;
 	font-weight: 700;
-	font-family: 'Acme', sans-serif;
+	font-family: 'Rubik', sans-serif;
 	color: var(--black);
+	margin-top: 3%;
 }
 .button {
     background-color:#2980B9;
@@ -114,7 +114,44 @@ textarea{
 .closely{
 	display: flex;align-items: center;margin-top: 20%;padding: 5px;
 }
+.cricketContent{
+	display:flex;
+	flex-direction: row;
+	width: 100%;
+	padding-top: 50px;
+}
+.sideBar{
+	width: 15%;
+	background-color:#777; 
+	align-items: center;
+	height:10000px;
+}
+.sideBarInnerStyle{
+	display:flex;
+	flex-direction: column;
+	padding: 20px;
+	position: fixed;
+}
 @media all and (max-width: 800px) {
+	.cricketContent{
+		display:flex;
+		flex-direction: column;
+		width: 100%;
+		padding-top:  70%;
+	}
+	.sideBar{
+		height: 50%;
+		background-color:#777; 
+		align-items: center;
+		width: 100%;
+		margin-top: 70%;
+		padding: 100px;
+	}
+	.sideBarInnerStyle{
+		display:flex;
+		flex-direction: row;
+		padding: 20px;
+	}
 	.closely{
 		align-items: left;
 		font-size: 10px;
